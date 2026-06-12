@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コラム | HealthLog</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; color: #2d2d2d; background: #f4faec; font-size: 15px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    nav { background: #5aad3f; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 880px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; padding: 0 1.25rem; }
+    .logo { color: #fff; font-size: 18px; font-weight: bold; display: flex; align-items: center; gap: 8px; letter-spacing: .5px; }
+    .logo svg { width: 22px; height: 22px; }
+    .nav-links { list-style: none; display: flex; gap: 28px; }
+    .nav-links a { color: rgba(255,255,255,.88); font-size: 13px; transition: color .15s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active { color: #fff; font-weight: bold; }
+
+    /* PAGE HEADER */
+    .page-header { background: #e8f5d8; padding: 2rem 1.25rem 1.75rem; border-bottom: 1px solid #c8e8a0; }
+    .page-header-inner { max-width: 720px; margin: 0 auto; }
+    .page-header h1 { font-size: 20px; font-weight: bold; color: #2d6a14; margin-bottom: .3rem; }
+    .page-header p { font-size: 13px; color: #6aac50; }
+
+    /* FILTER TABS */
+    .filter-bar { background: #fff; border-bottom: 1px solid #d8eec0; padding: .75rem 1.25rem; }
+    .filter-inner { max-width: 720px; margin: 0 auto; display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn {
+      font-size: 12px; padding: 5px 14px; border-radius: 16px;
+      border: 1px solid #c4dfaa; background: #fff; color: #5a8e40;
+      cursor: pointer; transition: all .15s;
+    }
+    .filter-btn.on { background: #5aad3f; color: #fff; border-color: #5aad3f; }
+    .filter-btn:hover:not(.on) { border-color: #5aad3f; color: #3d8a1f; }
+
+    /* MAIN LAYOUT */
+    .main { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+
+    /* SECTION LABEL */
+    .sec-label {
+      font-size: 13px; font-weight: bold; color: #5aad3f;
+      margin: 2.25rem 0 1rem;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .sec-label::after { content: ''; flex: 1; height: 1px; background: #c8e8a0; }
+    .sec-label:first-child { margin-top: 0; }
+
+    /* COLUMN CARD */
+    .col-card {
+      background: #fff; border: 1px solid #d0e8b8;
+      border-radius: 14px; padding: 1.3rem 1.4rem;
+      margin-bottom: 12px;
+    }
+    .col-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: .75rem; }
+    .col-title { font-size: 16px; font-weight: bold; color: #2d6a14; line-height: 1.4; }
+    .col-badge {
+      font-size: 11px; padding: 3px 10px; border-radius: 10px;
+      flex-shrink: 0; margin-top: 2px; white-space: nowrap;
+    }
+    .badge-fail { background: #fdecea; color: #c0392b; }
+    .badge-med  { background: #e8f5d8; color: #2d6a14; }
+    .badge-tip  { background: #fff8e1; color: #8a6800; }
+
+    .col-date { font-size: 12px; color: #99c880; margin-bottom: .6rem; }
+    .col-text { font-size: 13px; color: #3a3a3a; line-height: 1.85; }
+
+    /* WORD BOX — medical term highlight */
+    .word-box {
+      background: #f0fae8; border-left: 3px solid #5aad3f;
+      border-radius: 0 8px 8px 0;
+      padding: .75rem 1rem; margin: .9rem 0;
+      display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; align-items: baseline;
+    }
+    .word-en { font-size: 15px; font-weight: bold; color: #2d6a14; grid-column: 1; }
+    .word-ja { font-size: 12px; color: #6aac50; grid-column: 2; align-self: center; }
+    .word-def { font-size: 12px; color: #4a4a4a; line-height: 1.7; grid-column: 1 / -1; margin-top: 2px; }
+    .word-quote {
+      font-size: 12px; color: #5a8e40; font-style: italic;
+      border-top: 1px solid #c8e8a0; margin-top: .5rem; padding-top: .5rem;
+      grid-column: 1 / -1;
+    }
+
+    /* TAGS */
+    .col-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: .9rem; }
+    .tag { font-size: 11px; color: #4a9030; background: #e8f5d8; padding: 2px 10px; border-radius: 10px; }
+
+    /* FOOTER */
+    footer { background: #3d8a1f; padding: 1.75rem 1.25rem; text-align: center; }
+    .footer-links { list-style: none; display: flex; justify-content: center; gap: 20px; margin-bottom: .75rem; }
+    .footer-links a { font-size: 12px; color: rgba(255,255,255,.78); }
+    .footer-links a:hover { color: #fff; }
+    footer p { font-size: 12px; color: rgba(255,255,255,.6); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 4 13.5 4 8.5C4 5.46 6.46 3 9.5 3C11.04 3 12.43 3.62 13.44 4.64C13.74 4.95 14 5.28 14.22 5.64C14.44 5.28 14.7 4.95 15 4.64C16.01 3.62 17.4 3 18.94 3C21.98 3 24.44 5.46 24.44 8.5C24.44 13.5 16 21 16 21" fill="#fff" stroke="none"/></svg>
+      HealthLog
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">トップ</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="column.html" class="active">コラム</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>コラム</h1>
+    <p>失敗談・体験まとめ・医療ドラマで出てきた言葉の調査メモなど。</p>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn on">すべて</button>
+    <button class="filter-btn">失敗・反省</button>
+    <button class="filter-btn">医療用語メモ</button>
+    <button class="filter-btn">成果まとめ</button>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- 失敗 section -->
+  <div class="sec-label">失敗・反省</div>
+
+  <div class="col-card">
+    <div class="col-header">
+      <div class="col-title">早起き健康法、3日で崩壊した話</div>
+      <span class="col-badge badge-fail">失敗談</span>
+    </div>
+    <div class="col-date">2025年6月1日</div>
+    <p class="col-text">「5時起きで運動してから仕事！」という計画を立てて初日は成功した。2日目は5時半、3日目は6時に起きて、4日目は普通に7時まで寝ていた。<br><br>
+    原因を振り返ると、前日の就寝時間を全く変えていなかった。早起きだけ変えて夜更かしはそのままでは、睡眠時間が削れるだけだった。当たり前なのに気づかなかった。<br><br>
+    今は「夜22時にスマホを置く」ことだけにフォーカスしている。起きる時間より寝る時間を先に整えるのが順番として正しかった。</p>
+    <div class="col-tags"><span class="tag">#早起き</span><span class="tag">#睡眠</span><span class="tag">#失敗</span></div>
+  </div>
+
+  <div class="col-card">
+    <div class="col-header">
+      <div class="col-title">筋トレ動画を買って一度も開かなかった</div>
+      <span class="col-badge badge-fail">失敗談</span>
+    </div>
+    <div class="col-date">2025年5月15日</div>
+    <p class="col-text">某有名トレーナーの動画プログラムを購入した。30日チャレンジというやつ。ダウンロードしたまま、結局一度も再生しなかった。<br><br>
+    振り返ると「買った満足感」で終わっていた。やる気がピークのときにお金を使って、そこで燃え尽きるパターン。<br><br>
+    今はYouTubeで無料のものをその場で検索して、気が向いたときだけやる方式に切り替えた。ハードルを下げまくることが自分には合っていると学んだ。</p>
+    <div class="col-tags"><span class="tag">#筋トレ</span><span class="tag">#運動</span><span class="tag">#失敗</span><span class="tag">#ハードル下げ</span></div>
+  </div>
+
+  <div class="col-card">
+    <div class="col-header">
+      <div class="col-title">糖質制限、1週間で諦めた理由</div>
+      <span class="col-badge badge-fail">失敗談</span>
+    </div>
+    <div class="col-date">2025年4月22日</div>
+    <p class="col-text">白米もパンも断つ、という糖質制限を試した。最初の3日は我慢できたが、4日目に疲れと集中力の低下が重なり、夕飯に白米を普通に食べた。<br><br>
+    体より頭が疲れていた。在宅で考える仕事が続くと、脳がブドウ糖を求めるのか、甘いものや炭水化物への引力が普段の倍になる。<br><br>
+    完全制限でなく「ちょい減らし（1食あたりの量を7割にする）」に変えたら無理なく続いた。極端にしないことが大事だと痛感した。</p>
+    <div class="col-tags"><span class="tag">#糖質制限</span><span class="tag">#食事</span><span class="tag">#失敗</span></div>
+  </div>
+
+  <!-- 医療用語 section -->
+  <div class="sec-label">医療用語メモ（ドラマ・本から）</div>
+
+  <div class="col-card">
+    <div class="col-header">
+      <div class="col-title">『ER緊急救命室』で出てきた言葉を調べた</div>
+      <span class="col-badge badge-med">医療用語メモ</span>
+    </div>
+    <div class="col-date">2025年6月8日</div>
+    <p class="col-text">昔からERを見るたびに「分かる言葉と分からない言葉が混在しすぎる」と思っていた。今回ちゃんとメモしながら観たので記録しておく。</p>
+
+    <div class="word-box">
+      <span class="word-en">tachycardia</span>
+      <span class="word-ja">頻脈（ひんみゃく）</span>
+      <div class="word-def">心拍数が異常に速い状態。成人では安静時に100回/分以上が目安。tachy-（速い）＋ -cardia（心臓）というギリシャ語由来の組み合わせ。</div>
+      <div class="word-quote">"She's in tachycardia — heart rate's 130." / 「頻脈です、心拍130」</div>
+    </div>
+
+    <div class="word-box">
+      <span class="word-en">intubation</span>
+      <span class="word-ja">気管挿管（きかんそうかん）</span>
+      <div class="word-def">気道を確保するために気管にチューブを通す処置。自発呼吸ができない患者や全身麻酔時に行われる。ERでは「挿管して！」という場面で頻出。</div>
+      <div class="word-quote">"We need to intubate — get me a laryngoscope." / 「挿管する、喉頭鏡を」</div>
+    </div>
+
+    <div class="word-box">
+      <span class="word-en">BP</span>
+      <span class="word-ja">血圧（blood pressure）</span>
+      <div class="word-def">Blood Pressure の略。「BP is 80 over 40」のように「収縮期/拡張期」の順で読む。日本語の「上の血圧/下の血圧」に対応。低すぎるとショック状態のサイン。</div>
+      <div class="word-quote">"BP's dropping — 70 over 50 and falling." / 「血圧低下中、70の50で下がってる」</div>
+    </div>
+
+    <div class="col-tags"><span class="tag">#医療英語</span><span class="tag">#ER</span><span class="tag">#翻訳メモ</span></div>
+  </div>
+
+  <div class="col-card">
+    <div class="col-header">
+      <div class="col-title">『グレイズ・アナトミー』の医療用語まとめ</div>
+      <span class="col-badge badge-med">医療用語メモ</span>
+    </div>
+    <div class="col-date">2025年5月30日</div>
+    <p class="col-text">グレイズを英語字幕で見ていると、医療用語だけでなく職場のスラングや略語も多くて面白い。今回は手術シーンでよく出るものを整理した。</p>
+
+    <div class="word-box">
+      <span class="word-en">attending</span>
+      <span class="word-ja">指導医・上級医</span>
+      <div class="word-def">米国の病院制度における「attending physician」の略。研修医（resident/intern）を指導する立場の医師。グレイズでは単に「the attending」と呼ばれる。日本語に直訳しにくい言葉のひとつ。</div>
+      <div class="word-quote">"You can't just go in there — wait for the attending." / 「勝手に入るな、指導医を待て」</div>
+    </div>
+
+    <div class="word-box">
+      <span class="word-en">stat</span>
+      <span class="word-ja">至急・すぐに（statim）</span>
+      <div class="word-def">ラテン語 statim（すぐに）の略。医療現場で緊急を意味する定番ワード。"Call a code stat!" のように使う。日常英語では使わないが医療ドラマでは頻出中の頻出。</div>
+      <div class="word-quote">"Get me 10 units of O-neg, stat!" / 「O型陰性10単位、至急！」</div>
+    </div>
+
+    <div class="word-box">
+      <span class="word-en">crash</span>
+      <span class="word-ja">急変・容体急悪化</span>
+      <div class="word-def">患者の容体が急激に悪化することを指す医療スラング。心停止に近い状態になることも。"The patient is crashing" は「患者が急変している」。コンピューターのクラッシュと同じ語源的感覚で使われる。</div>
+      <div class="word-quote">"She's crashing — somebody get the crash cart!" / 「急変だ、カートを持ってきて！」</div>
+    </div>
+
+    <div class="col-tags"><span class="tag">#医療英語</span><span class="tag">#グレイズアナトミー</span><span class="tag">#翻訳メモ</span></div>
+  </div>
+
+  <div class="col-card">
+    <div class="col-header">
+      <div class="col-title">健康診断の結果用紙を英語で読んでみた</div>
+      <span class="col-badge badge-med">医療用語メモ</span>
+    </div>
+    <div class="col-date">2025年5月5日</div>
+    <p class="col-text">毎年もらう健康診断の結果って、項目名が漢字だらけでなんとなく流し読みしてしまう。英語ではどう言うのか調べたら逆に理解が深まった。</p>
+
+    <div class="word-box">
+      <span class="word-en">HDL / LDL cholesterol</span>
+      <span class="word-ja">善玉/悪玉コレステロール</span>
+      <div class="word-def">HDL = High-Density Lipoprotein（高密度リポタンパク質）、LDL = Low-Density Lipoprotein（低密度リポタンパク質）。HDLは血管から余分なコレステロールを回収する「善玉」、LDLは血管壁に蓄積する「悪玉」。英語圏でも "good cholesterol / bad cholesterol" と呼ばれる。</div>
+    </div>
+
+    <div class="word-box">
+      <span class="word-en">BMI</span>
+      <span class="word-ja">体格指数（Body Mass Index）</span>
+      <div class="word-def">体重(kg) ÷ 身長(m)²で算出される肥満度の指標。世界共通で使われるが、日本肥満学会の基準（25以上で肥満）はWHO基準（30以上）より厳しい。健診票では必ず登場する。</div>
+    </div>
+
+    <div class="col-tags"><span class="tag">#健康診断</span><span class="tag">#医療英語</span><span class="tag">#翻訳メモ</span></div>
+  </div>
+
+  <!-- 成果まとめ section -->
+  <div class="sec-label">成果まとめ</div>
+
+  <div class="col-card">
+    <div class="col-header">
+      <div class="col-title">3ヶ月続けて変わったこと、正直まとめ</div>
+      <span class="col-badge badge-tip">成果まとめ</span>
+    </div>
+    <div class="col-date">2025年5月25日</div>
+    <p class="col-text">記録を始めて3ヶ月。大きな変化はないけど、小さい変化が積み重なっている感じがある。正直に書いておく。<br><br>
+    <strong>よくなったこと：</strong>食後の眠気が減った。朝の目覚めが少し楽になった。間食の回数が週5→週2くらいに自然と減った。<br><br>
+    <strong>変わらなかったこと：</strong>体重はほぼ横ばい（−1.2kgは誤差の範囲かも）。運動の強度は全然上がっていない。<br><br>
+    結論：劇的な変化はないが、「なんとなく不調」が減った。それで十分だと思っている。</p>
+    <div class="col-tags"><span class="tag">#3ヶ月</span><span class="tag">#振り返り</span><span class="tag">#成果</span></div>
+  </div>
+
+</div>
+
+<footer>
+  <ul class="footer-links">
+    <li><a href="index.html">トップ</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="column.html">コラム</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <p>&copy; 2025 HealthLog</p>
+</footer>
+
+</body>
+</html>
