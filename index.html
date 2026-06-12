@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthLog | 健康維持の記録</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; color: #2d2d2d; background: #fff; font-size: 15px; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* ===== NAV ===== */
+    nav {
+      background: #5aad3f;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-inner {
+      max-width: 880px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 54px; padding: 0 1.25rem;
+    }
+    .logo {
+      color: #fff; font-size: 18px; font-weight: bold;
+      display: flex; align-items: center; gap: 8px; letter-spacing: .5px;
+    }
+    .logo svg { width: 22px; height: 22px; fill: #fff; }
+    .nav-links { list-style: none; display: flex; gap: 28px; }
+    .nav-links a {
+      color: rgba(255,255,255,.88); font-size: 13px;
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    /* ===== HERO ===== */
+    .hero { background: #e8f5d8; padding: 3.5rem 1.25rem 3rem; }
+    .hero-inner {
+      max-width: 880px; margin: 0 auto;
+      display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;
+    }
+    .hero-text { flex: 1; min-width: 260px; }
+    .hero-badge {
+      display: inline-block; background: #5aad3f; color: #fff;
+      font-size: 12px; padding: 4px 14px; border-radius: 20px; margin-bottom: .9rem;
+    }
+    .hero-text h1 {
+      font-size: 26px; font-weight: bold; color: #2d6a14; line-height: 1.5; margin-bottom: .75rem;
+    }
+    .hero-text p { font-size: 14px; color: #4a7d30; line-height: 1.8; max-width: 420px; }
+    .hero-cta {
+      display: inline-block; margin-top: 1.5rem;
+      background: #5aad3f; color: #fff;
+      font-size: 13px; padding: 10px 24px; border-radius: 24px;
+      transition: background .15s;
+    }
+    .hero-cta:hover { background: #4a9030; }
+    .hero-img { flex: 0 0 160px; display: flex; justify-content: center; }
+    .hero-circle {
+      width: 148px; height: 148px; border-radius: 50%;
+      background: #c0e0a0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-circle svg { width: 72px; height: 72px; fill: none; stroke: #4a9030; stroke-width: 1.6; }
+
+    /* ===== STATS ===== */
+    .stats { background: #f4faec; padding: 1.75rem 1.25rem; }
+    .stats-grid {
+      max-width: 880px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px;
+    }
+    .stat-card {
+      background: #fff; border: 1px solid #c8e8a0;
+      border-radius: 12px; padding: 1.1rem 1.25rem; text-align: center;
+    }
+    .stat-num { font-size: 24px; font-weight: bold; color: #3d8a1f; }
+    .stat-num span { font-size: 14px; font-weight: normal; }
+    .stat-label { font-size: 12px; color: #6aac50; margin-top: 4px; }
+
+    /* ===== SECTION COMMON ===== */
+    .section { padding: 2.25rem 1.25rem; }
+    .section.alt { background: #f4faec; }
+    .section-title {
+      font-size: 15px; font-weight: bold; color: #2d6a14;
+      margin-bottom: 1.1rem; padding-bottom: 8px;
+      border-bottom: 2px solid #8acc60;
+      max-width: 880px; margin-left: auto; margin-right: auto;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ===== MENU CARDS ===== */
+    .menu-grid {
+      max-width: 880px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;
+    }
+    .menu-card {
+      background: #fff; border: 1px solid #c4dfaa;
+      border-radius: 12px; padding: 1.1rem 1.25rem;
+      display: flex; align-items: flex-start; gap: 14px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .menu-card:hover { border-color: #5aad3f; box-shadow: 0 2px 8px rgba(90,173,63,.1); }
+    .menu-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: #e8f5d8; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .menu-icon svg { width: 24px; height: 24px; stroke: #4d9e30; fill: none; stroke-width: 1.7; }
+    .menu-card h3 { font-size: 14px; font-weight: bold; color: #2d6a14; margin-bottom: 5px; }
+    .menu-card p { font-size: 12px; color: #6a9e50; line-height: 1.6; }
+
+    /* ===== BLOG LIST ===== */
+    .blog-list {
+      max-width: 880px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .blog-item {
+      background: #fff; border: 1px solid #c4dfaa;
+      border-radius: 10px; padding: .85rem 1.1rem;
+      display: flex; align-items: baseline; gap: 18px;
+      transition: border-color .15s;
+    }
+    .blog-item:hover { border-color: #5aad3f; }
+    .blog-date { font-size: 12px; color: #88c065; flex-shrink: 0; }
+    .blog-title { font-size: 13px; color: #2d5e14; }
+    .view-all {
+      max-width: 880px; margin: 1rem auto 0;
+      text-align: right;
+    }
+    .view-all a { font-size: 12px; color: #5aad3f; }
+
+    /* ===== COLUMN CARDS ===== */
+    .col-grid {
+      max-width: 880px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;
+    }
+    .col-card {
+      background: #e8f5d8; border: 1px solid #aad488;
+      border-radius: 12px; padding: 1.1rem 1.25rem;
+    }
+    .col-card h3 { font-size: 14px; font-weight: bold; color: #2d6a14; margin-bottom: 6px; }
+    .col-card p { font-size: 12px; color: #5a8e40; line-height: 1.6; }
+    .col-tag {
+      display: inline-block; font-size: 11px;
+      background: #b2dda0; color: #2d6a14;
+      padding: 2px 10px; border-radius: 10px; margin-top: .6rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer { background: #3d8a1f; padding: 1.75rem 1.25rem; text-align: center; }
+    .footer-links { list-style: none; display: flex; justify-content: center; gap: 20px; margin-bottom: .75rem; }
+    .footer-links a { font-size: 12px; color: rgba(255,255,255,.78); }
+    .footer-links a:hover { color: #fff; }
+    footer p { font-size: 12px; color: rgba(255,255,255,.6); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C12 21 4 13.5 4 8.5C4 5.46 6.46 3 9.5 3C11.04 3 12.43 3.62 13.44 4.64C13.74 4.95 14 5.28 14.22 5.64C14.44 5.28 14.7 4.95 15 4.64C16.01 3.62 17.4 3 18.94 3C21.98 3 24.44 5.46 24.44 8.5C24.44 13.5 16 21 16 21" fill="#fff" stroke="none"/></svg>
+      HealthLog
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">トップ</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="column.html">コラム</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-badge">健康維持の記録</span>
+      <h1>毎日を、すこやかに。<br>自分のペースで続ける健康習慣。</h1>
+      <p>食事・運動・体調の記録をつけながら、自分なりの健康を見つけていくサイトです。完璧じゃなくていい。ゆるく、長く、楽しく。</p>
+      <a class="hero-cta" href="blog.html">ブログを読む</a>
+    </div>
+    <div class="hero-img">
+      <div class="hero-circle">
+        <!-- heart icon -->
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 56 C32 56 8 38 8 22 C8 13.7 14.7 7 23 7 C27.4 7 31.4 9 34 12.2 C36.6 9 40.6 7 45 7 C53.3 7 60 13.7 60 22 C60 38 32 56 32 56Z" stroke="#4a9030" stroke-width="2" fill="#a8d880"/>
+          <line x1="22" y1="28" x2="27" y2="28" stroke="#4a9030" stroke-width="2" stroke-linecap="round"/>
+          <polyline points="27,28 30,22 34,34 38,24 41,28 46,28" stroke="#4a9030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-num">87<span> 日</span></div>
+      <div class="stat-label">継続記録中</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">1,840<span> kcal</span></div>
+      <div class="stat-label">今日の摂取カロリー</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">7,250<span> 歩</span></div>
+      <div class="stat-label">今日の歩数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">−1.2<span> kg</span></div>
+      <div class="stat-label">先月比体重変化</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENTS MENU -->
+<section class="section">
+  <div class="section-title">コンテンツ</div>
+  <div class="menu-grid">
+    <a href="blog.html" class="menu-card">
+      <div class="menu-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="13" x2="13" y2="13"/></svg>
+      </div>
+      <div>
+        <h3>ブログ</h3>
+        <p>日々の食事・運動の記録や気づきをシンプルに残しています。</p>
+      </div>
+    </a>
+    <a href="column.html" class="menu-card">
+      <div class="menu-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="4 17 9 12 13 16 22 6"/><line x1="14" y1="6" x2="22" y2="6"/><line x1="22" y1="6" x2="22" y2="14"/></svg>
+      </div>
+      <div>
+        <h3>コラム</h3>
+        <p>習慣化のコツや体験談、自分なりの成果をまとめたコンテンツ。</p>
+      </div>
+    </a>
+    <a href="about.html" class="menu-card">
+      <div class="menu-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <div>
+        <h3>About</h3>
+        <p>このサイトについて・管理人プロフィール・リンク集。</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="section alt">
+  <div class="section-title">最近のブログ</div>
+  <div class="blog-list">
+    <div class="blog-item">
+      <span class="blog-date">2025-06-12</span>
+      <span class="blog-title">今週は野菜多めを意識してみた</span>
+    </div>
+    <div class="blog-item">
+      <span class="blog-date">2025-06-10</span>
+      <span class="blog-title">朝の30分ウォーキングを3週間続けた感想</span>
+    </div>
+    <div class="blog-item">
+      <span class="blog-date">2025-06-07</span>
+      <span class="blog-title">睡眠の質が上がったかも？体感レポート</span>
+    </div>
+    <div class="blog-item">
+      <span class="blog-date">2025-06-03</span>
+      <span class="blog-title">間食を減らすためにやった3つのこと</span>
+    </div>
+  </div>
+  <div class="view-all"><a href="blog.html">すべてのブログ記事を見る →</a></div>
+</section>
+
+<!-- COLUMN PREVIEW -->
+<section class="section">
+  <div class="section-title">コラムピックアップ</div>
+  <div class="col-grid">
+    <div class="col-card">
+      <h3>3ヶ月で変わったこと</h3>
+      <p>記録を続けて気づいた、体と習慣の小さな変化をまとめました。</p>
+      <span class="col-tag">成果レポート</span>
+    </div>
+    <div class="col-card">
+      <h3>無理なく続けるための工夫</h3>
+      <p>完璧にやらなくていい、ゆるく長く続けるためのマイルール。</p>
+      <span class="col-tag">習慣化</span>
+    </div>
+    <div class="col-card">
+      <h3>あすけんとの付き合い方</h3>
+      <p>記録ツールとしてうまく使うコツと、振り返り方の実例。</p>
+      <span class="col-tag">ツール活用</span>
+    </div>
+  </div>
+  <div class="view-all"><a href="column.html">すべてのコラムを見る →</a></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <ul class="footer-links">
+    <li><a href="index.html">トップ</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="column.html">コラム</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <p>&copy; 2025 HealthLog</p>
+</footer>
+
+</body>
+</html>
