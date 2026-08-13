@@ -8,8 +8,6 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; color: #2d2d2d; background: #f4faec; font-size: 15px; line-height: 1.7; }
     a { text-decoration: none; color: inherit; }
-
-    /* NAV */
     nav { background: #5aad3f; position: sticky; top: 0; z-index: 100; }
     .nav-inner { max-width: 880px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 54px; padding: 0 1.25rem; }
     .logo { color: #fff; font-size: 18px; font-weight: bold; display: flex; align-items: center; gap: 8px; letter-spacing: .5px; }
@@ -17,54 +15,23 @@
     .nav-links { list-style: none; display: flex; gap: 28px; }
     .nav-links a { color: rgba(255,255,255,.88); font-size: 13px; transition: color .15s; }
     .nav-links a:hover, .nav-links a.active { color: #fff; font-weight: bold; }
-
-    /* PAGE HEADER */
     .page-header { background: #e8f5d8; padding: 2rem 1.25rem 1.75rem; border-bottom: 1px solid #c8e8a0; }
     .page-header-inner { max-width: 620px; margin: 0 auto; }
     .page-header h1 { font-size: 20px; font-weight: bold; color: #2d6a14; margin-bottom: .3rem; }
     .page-header p { font-size: 13px; color: #6aac50; }
-
-    /* TIMELINE */
     .timeline-wrap { max-width: 620px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
-
-    /* MONTH GROUP */
-    .month-label {
-      font-size: 13px; font-weight: bold; color: #5aad3f;
-      margin: 2rem 0 .75rem;
-      display: flex; align-items: center; gap: 10px;
-    }
+    .month-label { font-size: 13px; font-weight: bold; color: #5aad3f; margin: 2rem 0 .75rem; display: flex; align-items: center; gap: 10px; }
     .month-label::after { content: ''; flex: 1; height: 1px; background: #c8e8a0; }
-
-    /* POST */
-    .post {
-      background: #fff;
-      border: 1px solid #d0e8b8;
-      border-radius: 14px;
-      padding: 1rem 1.2rem;
-      margin-bottom: 10px;
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 12px;
-    }
-    .avatar {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: #b2dda0;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
+    .post { background: #fff; border: 1px solid #d0e8b8; border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 10px; display: grid; grid-template-columns: 44px 1fr; gap: 12px; }
+    .avatar { width: 44px; height: 44px; border-radius: 50%; background: #b2dda0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .avatar svg { width: 22px; height: 22px; stroke: #4a9030; fill: none; stroke-width: 1.8; }
-    .post-body {}
     .post-meta { display: flex; align-items: center; gap: 10px; margin-bottom: .4rem; }
-    .post-name { font-size: 13px; font-weight: bold; color: #2d6a14; }
     .post-date { font-size: 12px; color: #99c880; }
     .post-text { font-size: 14px; color: #2d2d2d; line-height: 1.75; }
+    .post-text p { margin-bottom: .6rem; }
+    .post-text p:last-child { margin-bottom: 0; }
     .post-tags { margin-top: .5rem; display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      font-size: 11px; color: #4a9030;
-      background: #e8f5d8; padding: 2px 10px; border-radius: 10px;
-    }
-
-    /* FOOTER */
+    .tag { font-size: 11px; color: #4a9030; background: #e8f5d8; padding: 2px 10px; border-radius: 10px; }
     footer { background: #3d8a1f; padding: 1.75rem 1.25rem; text-align: center; }
     .footer-links { list-style: none; display: flex; justify-content: center; gap: 20px; margin-bottom: .75rem; }
     .footer-links a { font-size: 12px; color: rgba(255,255,255,.78); }
@@ -101,1030 +68,511 @@
 
 <div class="timeline-wrap">
 
-  <div class="month-label">2026年</div>
+  <div class="month-label">2026年8月</div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月13日</span>
-      </div>
-      <p class="post-text">不安になる。やっぱ食欲で満たすのが手っ取り早いってなっちゃう。これは危険。
-      食欲じゃなくて、別のことでストレス発散させたい。</p>
-    </div>
-  </dv>
-
-  <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
-    <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月13日</span>
-      </div>
-      <p class="post-text">YouTubeを観すぎると辛いってなっちゃうんだけど、
-      やっぱ最近やけに感情を刺激する動画が多い気がする。
-      でも好きなYouTuberがいるから観るんだけど、オススメ動画が流れてくると辛くなっちゃうんだよね。</p>
+      <div class="post-meta"><span class="post-date">8月13日</span></div>
+      <p class="post-text">不安になる。やっぱ食欲で満たすのが手っ取り早いってなっちゃう。これは危険。食欲じゃなくて、別のことでストレス発散させたい。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月12日</span>
-      </div>
-      <p class="post-text">こういう調子のいいときに働きすぎるからあとで萎れるのに………
-        加減を分かったほうがいいな。もうちょっとやる気コントロールしたい。
-      昔、働くの好きすぎて過労で倒れたことあるからね（笑）
-        仕事のストレスを仕事で埋めてた時期が………
-      いや、反省してるからこそ休むときは休もう。19時以降は何もしない！</p>
+      <div class="post-meta"><span class="post-date">8月13日</span></div>
+      <p class="post-text">YouTubeを観すぎると辛いってなっちゃうんだけど、やっぱ最近やけに感情を刺激する動画が多い気がする。でも好きなYouTuberがいるから観るんだけど、オススメ動画が流れてくると辛くなっちゃうんだよね。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月12日</span>
-      </div>
-      <p class="post-text">なんか知らないけど今日はすごく精神安定してる。
-        理由は多分、気温による睡眠の質だと思う。（もしかして能か………？）
-      睡眠のおかげで精神安定した代わりに少し涼しくなったせいか過敏性腸症候群でお腹壊した。
-      やる気がないときは何か一つでも前に進めればいいんだよ。
-      そしたらやる気があるときに一気にできるから。</p>
+      <div class="post-meta"><span class="post-date">8月12日</span></div>
+      <p class="post-text">こういう調子のいいときに働きすぎるからあとで萎れるのに………加減を分かったほうがいいな。もうちょっとやる気コントロールしたい。昔、働くの好きすぎて過労で倒れたことあるからね（笑）仕事のストレスを仕事で埋めてた時期が………いや、反省してるからこそ休むときは休もう。19時以降は何もしない！</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月12日</span>
-      </div>
-      <p class="post-text">もし、ブルーマンデーがドーパミンクラッシュと一緒の原理なら、
-      能を観れば回復する可能性ある。
-      でも、そんなに刺激の強い動画は観てないつもりなんだけどな。（テレビも観ないし刺激の強い動画も苦手）
-      ドーパミンクラッシュするときは能を観たくなるけど、
-      ブルーマンデーで刺激の少ない動画を観る気が起きるかが問題ではある。
-      よく考えてみれば、ブルーマンデーになると刺激の強いことをして
-      やる気を刺激で誘発させようとしてる気がする。
-      むしろブルーマンデーこそ能とか刺激の弱いことをしたほうが良いのかもしれない。軽い運動とか。
-      なぜ火曜以降は簡単に体が動くのか……。</p>
+      <div class="post-meta"><span class="post-date">8月12日</span></div>
+      <p class="post-text">なんか知らないけど今日はすごく精神安定してる。理由は多分、気温による睡眠の質だと思う。（もしかして能か………？）睡眠のおかげで精神安定した代わりに少し涼しくなったせいか過敏性腸症候群でお腹壊した。やる気がないときは何か一つでも前に進めればいいんだよ。そしたらやる気があるときに一気にできるから。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月11日</span>
-      </div>
-      <p class="post-text">YouTube見すぎると憂鬱とか不安になってくるのはあると思う。
-      調べたら「ドーパミンクラッシュ」っていうのがあるらしい。
-      面白い刺激の強い動画を見すぎるとドーパミンが枯渇するらしい。
-      脳疲労を起こしたりするのも原因の一つっぽい。
-      ドーパミンクラッシュするとめちゃめちゃ能を観たくなるんだよね（笑）
-      能を観るとセロトニンとかオキシトシンとか出るのかな？</p>
+      <div class="post-meta"><span class="post-date">8月12日</span></div>
+      <p class="post-text">もし、ブルーマンデーがドーパミンクラッシュと一緒の原理なら、能を観れば回復する可能性ある。でも、そんなに刺激の強い動画は観てないつもりなんだけどな。（テレビも観ないし刺激の強い動画も苦手）ドーパミンクラッシュするときは能を観たくなるけど、ブルーマンデーで刺激の少ない動画を観る気が起きるかが問題ではある。よく考えてみれば、ブルーマンデーになると刺激の強いことをしてやる気を刺激で誘発させようとしてる気がする。むしろブルーマンデーこそ能とか刺激の弱いことをしたほうが良いのかもしれない。軽い運動とか。なぜ火曜以降は簡単に体が動くのか……。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月10日</span>
-      </div>
-      <p class="post-text">先に口にだしたら本当にならないかな？
-      「月曜ってなんでこんなにやる気でるんだろ。漫画と翻訳がめちゃめちゃ進んじゃうよ～～」
-      って言ったら本当にならないかな？自己暗示的な。</p>
+      <div class="post-meta"><span class="post-date">8月11日</span></div>
+      <p class="post-text">YouTube見すぎると憂鬱とか不安になってくるのはあると思う。調べたら「ドーパミンクラッシュ」っていうのがあるらしい。面白い刺激の強い動画を見すぎるとドーパミンが枯渇するらしい。脳疲労を起こしたりするのも原因の一つっぽい。ドーパミンクラッシュするとめちゃめちゃ能を観たくなるんだよね（笑）能を観るとセロトニンとかオキシトシンとか出るのかな？</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月10日</span>
-      </div>
-      <p class="post-text">なんで月曜って動けなくなっちゃうんだろう。
-        頭ではあれもこれもやらなきゃいけないって思ってるのに、
-        片付けと整理整頓だけで一日終わっちゃう。あと無駄な計画表作ったり、
-        無駄に格言を調べたり、YouTubeでクリエイターのインタビュー観たり、火曜から動き始めることが多い。
-      しかも掃除機出してきてがっつり掃除するってわけじゃないんだよね。
-        「やらなきゃやらなきゃ」「やるぞーやるぞー」って頭の中で反芻してて、
-      いつのまにかレシートをシュレッダーにかけたり、コンロ拭いたりしてる。ちょこちょこ掃除。
-      ブルーマンデーっていうらしい。</p>
+      <div class="post-meta"><span class="post-date">8月10日</span></div>
+      <p class="post-text">先に口にだしたら本当にならないかな？「月曜ってなんでこんなにやる気でるんだろ。漫画と翻訳がめちゃめちゃ進んじゃうよ～～」って言ったら本当にならないかな？自己暗示的な。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月10日</span>
-      </div>
-      <p class="post-text">ヤバい。不安が襲ってくる。月曜は不安が増す。すべてが「自分ってダメ人間」になる。
-      鬱病になってから不安が頭から離れないことをうちでは「ぐるぐる」って呼んでるんだけど、月曜はぐるぐるになる。
-      不安を解消するには"なにかを食べる"が手っ取り早いんだけど、食欲で満たすのは良くない。
-      これを運動とか創作で解消できれば御の字なんじゃないかと。ぐるぐる解消計画立てたい。</p>
+      <div class="post-meta"><span class="post-date">8月10日</span></div>
+      <p class="post-text">なんで月曜って動けなくなっちゃうんだろう。頭ではあれもこれもやらなきゃいけないって思ってるのに、片付けと整理整頓だけで一日終わっちゃう。あと無駄な計画表作ったり、無駄に格言を調べたり、YouTubeでクリエイターのインタビュー観たり、火曜から動き始めることが多い。しかも掃除機出してきてがっつり掃除するってわけじゃないんだよね。「やらなきゃやらなきゃ」「やるぞーやるぞー」って頭の中で反芻してて、いつのまにかレシートをシュレッダーにかけたり、コンロ拭いたりしてる。ちょこちょこ掃除。ブルーマンデーっていうらしい。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月9日</span>
-      </div>
-      <p class="post-text">テレビが洗脳装置だったらネットメディアは感情増幅装置。
-        今の時代、それを遠ざけるのは無理だから感情をコントロールするやり方を考えないといけないなと思う。</p>
+      <div class="post-meta"><span class="post-date">8月10日</span></div>
+      <p class="post-text">ヤバい。不安が襲ってくる。月曜は不安が増す。すべてが「自分ってダメ人間」になる。鬱病になってから不安が頭から離れないことをうちでは「ぐるぐる」って呼んでるんだけど、月曜はぐるぐるになる。不安を解消するには"なにかを食べる"が手っ取り早いんだけど、食欲で満たすのは良くない。これを運動とか創作で解消できれば御の字なんじゃないかと。ぐるぐる解消計画立てたい。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月9日</span>
-      </div>
-      <p class="post-text">具合が悪かったからここ最近YouTube観てたんだけど、
-        やっぱりある一定の時間を越すと刺激の強い動画が流れてくるようになる。
-        刺激が強いからクリックしちゃうんだけど、まあ、あまり良くない動画だよね………。
-        それが自分の心の中にある不安とかを増幅させる装置みたいになってる気がする。
-        ３ある不安が10になる。YouTubeは１日最大でも３時間が理想だと思う。
-        精神を安定させることに集中したいならソーシャルメディアはやらないに越したことはない。</p>
+      <div class="post-meta"><span class="post-date">8月9日</span></div>
+      <p class="post-text">テレビが洗脳装置だったらネットメディアは感情増幅装置。今の時代、それを遠ざけるのは無理だから感情をコントロールするやり方を考えないといけないなと思う。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月8日</span>
-      </div>
-      <p class="post-text">周りにも聞くんだけど学生時代の部活とかのせいで
-        「運動めんどい」ってなる人多いんだよね。
-        これは良いのか？と思う。健康を維持するには筋トレとか必要じゃん。
-        運動を嫌にさせるって学校教育としてどうなのか。
-        だってスポーツなんか社会人になってからやらないんだから。
-        だったら健康を維持するための運動法とか教わりたいよね。</p>
+      <div class="post-meta"><span class="post-date">8月9日</span></div>
+      <p class="post-text">具合が悪かったからここ最近YouTube観てたんだけど、やっぱりある一定の時間を越すと刺激の強い動画が流れてくるようになる。刺激が強いからクリックしちゃうんだけど、まあ、あまり良くない動画だよね………。それが自分の心の中にある不安とかを増幅させる装置みたいになってる気がする。３ある不安が10になる。YouTubeは１日最大でも３時間が理想だと思う。精神を安定させることに集中したいならソーシャルメディアはやらないに越したことはない。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月7日</span>
-      </div>
-      <p class="post-text">ちょっと運動したら悩みが軽くなったから、
-      月曜に狭い空間で軽くできる運動を何か考えたい。
-      かかと上げが良いなって思ってるんだけど、何かほかにもないかな。</p>
+      <div class="post-meta"><span class="post-date">8月8日</span></div>
+      <p class="post-text">周りにも聞くんだけど学生時代の部活とかのせいで「運動めんどい」ってなる人多いんだよね。これは良いのか？と思う。健康を維持するには筋トレとか必要じゃん。運動を嫌にさせるって学校教育としてどうなのか。だってスポーツなんか社会人になってからやらないんだから。だったら健康を維持するための運動法とか教わりたいよね。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月7日</span>
-      </div>
-      <p class="post-text">金曜チートデー！金曜チートデー！久々にチョコにした。
-      金曜チートデーにしてからしばらく食べてないから。</p>
+      <div class="post-meta"><span class="post-date">8月7日</span></div>
+      <p class="post-text">ちょっと運動したら悩みが軽くなったから、月曜に狭い空間で軽くできる運動を何か考えたい。かかと上げが良いなって思ってるんだけど、何かほかにもないかな。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月7日</span>
-      </div>
-      <p class="post-text">寝てたときに人生初のこむら返りにあった。これ痛いね………。
-      寝てる間に脱水症状になってる可能性あるらしい。（頻度が増えたら病院に行こうと思う）
-      思い当たるフシがある。除湿器ガンガンつけてるからね。寝る前に水飲んで除湿器消さないとな。
-      でも、ベタベタしてて寝にくいんだよね……。エアコンの温度低すぎるんだよな。</p>
+      <div class="post-meta"><span class="post-date">8月7日</span></div>
+      <p class="post-text">金曜チートデー！金曜チートデー！久々にチョコにした。金曜チートデーにしてからしばらく食べてないから。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月3日</span>
-      </div>
-      <p class="post-text">ネットで失敗した人をコメントで過剰に叩くのをよく見るんだけど、
-      私は失敗した人の話も聞きたいからなんだかな……って。
-      失敗体験が言いやすい環境になればいいな………。
-      その動画に「分かります」ってコメントしてるの見かけたらそれは私です。<br>
-      追記：そうか。おばちゃんたちの「パソコン難しいわねぇ」って愚痴は共感しあって気持ちを軽くしてるのか。</p>
+      <div class="post-meta"><span class="post-date">8月7日</span></div>
+      <p class="post-text">寝てたときに人生初のこむら返りにあった。これ痛いね………。寝てる間に脱水症状になってる可能性あるらしい。（頻度が増えたら病院に行こうと思う）思い当たるフシがある。除湿器ガンガンつけてるからね。寝る前に水飲んで除湿器消さないとな。でも、ベタベタしてて寝にくいんだよね……。エアコンの温度低すぎるんだよな。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月3日</span>
-      </div>
-      <p class="post-text">月曜にうつ発作になりやすい気がする。
-      土日に家に人がいたところから一気に一人になると
-      「自分ってなんか何もかもダメな人間だな……」って自分のダメなところを反芻しちゃうんだよね。
-      深刻なうつ発作っていうよりは、どちらかというと不安発作って言った方が正しいかもしれない。
-      月曜はなるべく低燃費を心がけてる。とりあえず午後に少し翻訳の勉強して緩く過ごす。
-      少しづつ不安発作を治していきたい。<br>
-      追記：YouTubeがいけない気がする。"上手くいってる人"を見てると自分と比べてしまう気がする。
-      サラリーマンやってる人が仕事の愚痴言ってる動画のほうが気持ちが少し軽くなる。</p>
+      <div class="post-meta"><span class="post-date">8月3日</span></div>
+      <p class="post-text">ネットで失敗した人をコメントで過剰に叩くのをよく見るんだけど、私は失敗した人の話も聞きたいからなんだかな……って。失敗体験が言いやすい環境になればいいな………。その動画に「分かります」ってコメントしてるの見かけたらそれは私です。<br>追記：そうか。おばちゃんたちの「パソコン難しいわねぇ」って愚痴は共感しあって気持ちを軽くしてるのか。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月2日</span>
-      </div>
-      <p class="post-text">ひたすらサラダが食いたい。汗がベタベタするからサラダでサッパリさせたい。
-        栄養が偏りそうだな。</p>
+      <div class="post-meta"><span class="post-date">8月3日</span></div>
+      <p class="post-text">月曜にうつ発作になりやすい気がする。土日に家に人がいたところから一気に一人になると「自分ってなんか何もかもダメな人間だな……」って自分のダメなところを反芻しちゃうんだよね。深刻なうつ発作っていうよりは、どちらかというと不安発作って言った方が正しいかもしれない。月曜はなるべく低燃費を心がけてる。とりあえず午後に少し翻訳の勉強して緩く過ごす。少しづつ不安発作を治していきたい。<br>追記：YouTubeがいけない気がする。"上手くいってる人"を見てると自分と比べてしまう気がする。サラリーマンやってる人が仕事の愚痴言ってる動画のほうが気持ちが少し軽くなる。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月1日</span>
-      </div>
-      <p class="post-text">なんか都心に近づけば近づくほどクラクラするし頭痛い………なんでじゃ。
-        もしかして照り返し……かな？
-        頭痛薬もらいにいったら「夏バテで頭痛薬使わないほうがいいよ。腎臓に悪いから」って言われた。
-        「水かポカリがいいよ。ポカリは糖分多いからちょっとずつ飲んでね」って言われた。
-        薬は諦めてサングラス買って試してみる。</p>
+      <div class="post-meta"><span class="post-date">8月2日</span></div>
+      <p class="post-text">ひたすらサラダが食いたい。汗がベタベタするからサラダでサッパリさせたい。栄養が偏りそうだな。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">8月1日</span>
-      </div>
-      <p class="post-text">外出たらクラクラして脂汗出た……。てか、都心に行くとより暑い。
-      たまたま自販機あってポカリ買ってなんとか耐えたけど、暑い時間にちょっとした散歩したほうがいいな。
-      クーラーばかりだと逆に暑さに耐えられなくなる。</p>
+      <div class="post-meta"><span class="post-date">8月1日</span></div>
+      <p class="post-text">なんか都心に近づけば近づくほどクラクラするし頭痛い………なんでじゃ。もしかして照り返し……かな？頭痛薬もらいにいったら「夏バテで頭痛薬使わないほうがいいよ。腎臓に悪いから」って言われた。「水かポカリがいいよ。ポカリは糖分多いからちょっとずつ飲んでね」って言われた。薬は諦めてサングラス買って試してみる。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月31日</span>
-      </div>
-      <p class="post-text">停滞したらちょっと運動したり散歩に行けばいいのにめんどーいってなっちゃう。夏だし。
-      なんか探したい、散歩と運動する理由。ポケモンGOやるとか家でエアロビするとか。
-      １日の必須運動量って筋トレは１時間で、歩数で言うと１万歩らしいんだよね。
-      まじで１日に１回でもYouTubeでエアロビやろうかどうか悩んでる自分はどうなるんだ……。</p>
+      <div class="post-meta"><span class="post-date">8月1日</span></div>
+      <p class="post-text">外出たらクラクラして脂汗出た……。てか、都心に行くとより暑い。たまたま自販機あってポカリ買ってなんとか耐えたけど、暑い時間にちょっとした散歩したほうがいいな。クーラーばかりだと逆に暑さに耐えられなくなる。</p>
+    </div>
+  </div>
+
+  <div class="month-label">2026年7月</div>
+
+  <div class="post">
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+    <div class="post-body">
+      <div class="post-meta"><span class="post-date">7月31日</span></div>
+      <p class="post-text">停滞したらちょっと運動したり散歩に行けばいいのにめんどーいってなっちゃう。夏だし。なんか探したい、散歩と運動する理由。ポケモンGOやるとか家でエアロビするとか。１日の必須運動量って筋トレは１時間で、歩数で言うと１万歩らしいんだよね。まじで１日に１回でもYouTubeでエアロビやろうかどうか悩んでる自分はどうなるんだ……。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月31日</span>
-      </div>
-      <p class="post-text">今日の金曜チートデーはコーラにする。スーパーで70円だったデカ缶買っていたので………
-        フォーーーーーーー。チート・デー！チート・デー！<br>
-        最近、甘い物を一口食べたら遠くに置くようにしてる。一気に食べないように。</p>
+      <div class="post-meta"><span class="post-date">7月31日</span></div>
+      <p class="post-text">今日の金曜チートデーはコーラにする。スーパーで70円だったデカ缶買っていたので………フォーーーーーーー。チート・デー！チート・デー！<br>最近、甘い物を一口食べたら遠くに置くようにしてる。一気に食べないように。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月31日</span>
-      </div>
-      <p class="post-text">簡単にできる朝ごはんのメニュー考えようかな。
-        サラダチキン（自分で作る）、味噌汁、ジャガイモ、バナナ一本半、レタス（それかキャベツ）が良いかなって思ってる。
-      朝は面倒くさいから安い食材かつ低燃費で料理したい。</p>
+      <div class="post-meta"><span class="post-date">7月31日</span></div>
+      <p class="post-text">簡単にできる朝ごはんのメニュー考えようかな。サラダチキン（自分で作る）、味噌汁、ジャガイモ、バナナ一本半、レタス（それかキャベツ）が良いかなって思ってる。朝は面倒くさいから安い食材かつ低燃費で料理したい。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月31日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">7月31日</span></div>
       <p class="post-text">あー甘い物食いたくなってきた………。ジャガイモ食おう。もしかして朝ごはんが足りてないから甘い物食べたくなる？</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月30日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">7月30日</span></div>
       <p class="post-text">やべー。今週疲れてたってのもあるけど、めっちゃYouTube見ちゃった……。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月29日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">7月29日</span></div>
       <p class="post-text">最近能を観てるんだけど、すべてのホルモンが一旦リセットされる気がするんだよね。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月29日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">7月29日</span></div>
       <p class="post-text">"健康のために運動する"ってのがやる気を削ぐんだよな。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月29日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">7月29日</span></div>
       <p class="post-text">なんか気分が下がってるんだけど、もしかして………これって………お菓子で糖分取ってないから………？</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月29日</span>
-      </div>
-      <p class="post-text">２週間くらい集中するとそのあとに２日くらい脳が強制シャットダウンする日が来る。
-      できるなら強制シャットダウンじゃなくて効率の良い方法で一週間に一回シャットダウン（リフレッシュ）できる方法を編み出したい。</p>
+      <div class="post-meta"><span class="post-date">7月29日</span></div>
+      <p class="post-text">２週間くらい集中するとそのあとに２日くらい脳が強制シャットダウンする日が来る。できるなら強制シャットダウンじゃなくて効率の良い方法で一週間に一回シャットダウン（リフレッシュ）できる方法を編み出したい。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月29日</span>
-      </div>
-      <p class="post-text">夜中に起きちゃうと眠れなくなっちゃう。
-      しかも、ちょっと頭痛い。</p>
+      <div class="post-meta"><span class="post-date">7月29日</span></div>
+      <p class="post-text">夜中に起きちゃうと眠れなくなっちゃう。しかも、ちょっと頭痛い。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月28日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">7月28日</span></div>
       <p class="post-text">甘い物我慢してたのに旦那が甘い物買ってきた！まあ、食べるけどね！食べるけど！</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月28日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">7月28日</span></div>
       <p class="post-text">いろいろ上手くいかなくて若干ダウン気味。知的好奇心はあるのに、世の中分からないことが多すぎる。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月28日</span>
-      </div>
-      <p class="post-text">もしかしたら、
-      いっそのことYouTubeみたいに一週間だけ「間食も甘い物も取らない」以外何もしない日を作った方が良いのかも。
-      刺激を一旦リセットする感じで。
-      それか良い案としては、<u>新しいことを一個勉強する</u>とかいいのかもしれない。</p>
+      <div class="post-meta"><span class="post-date">7月28日</span></div>
+      <p class="post-text">もしかしたら、いっそのことYouTubeみたいに一週間だけ「間食も甘い物も取らない」以外何もしない日を作った方が良いのかも。刺激を一旦リセットする感じで。それか良い案としては、<u>新しいことを一個勉強する</u>とかいいのかもしれない。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月28日</span>
-      </div>
-      <p class="post-text">甘い物の代わりにポテチとナッツを食べるようになってしまった………。
-      今はそれでいいかもしれない。とにかく甘い物を卒業できればそれでいい。
-      甘い物を食べてしまう理由を考えたんだけど、
-      多分だけど、集中するのにスナックって手っ取り早く刺激を得られるから甘い物とか間食しちゃうのかも。
-      ①今から集中するぞ！って何かスタートさせるような刺激もほしいってのもあるし、
-      ②お金をちょっと使うことで欲を満たしてるのもあるし、
-      ③コンビニに行って店員と話すことで外の社会に触れた気にもなるってのもあるし
-      ④コンビニに行くことで少し散歩できるってのもある。
-      それぞれの刺激の代替を考えれば辞められるんじゃないかと。まずは①の刺激の代替を模索したい。</p>
+      <div class="post-meta"><span class="post-date">7月28日</span></div>
+      <p class="post-text">甘い物の代わりにポテチとナッツを食べるようになってしまった………。今はそれでいいかもしれない。とにかく甘い物を卒業できればそれでいい。甘い物を食べてしまう理由を考えたんだけど、多分だけど、集中するのにスナックって手っ取り早く刺激を得られるから甘い物とか間食しちゃうのかも。①今から集中するぞ！って何かスタートさせるような刺激もほしいってのもあるし、②お金をちょっと使うことで欲を満たしてるのもあるし、③コンビニに行って店員と話すことで外の社会に触れた気にもなるってのもあるし④コンビニに行くことで少し散歩できるってのもある。それぞれの刺激の代替を考えれば辞められるんじゃないかと。まずは①の刺激の代替を模索したい。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月26日</span>
-      </div>
-      <p class="post-text">「デジタルデトックス」とか馬鹿にしてたのに、
-      ネット観ないようにしたらメンタルの不調が戻ったんだよね。
-      まじでネットはメンタル崩す。思い切ってSNSとYouTube辞めるのオススメする。
-      しかも、感情のふり幅を大きくして購買意欲を高めるようにネットってできてるから、
-      ネットにハマってるときってネガティブな情報をとことんネガティブに捉えてしまう。
-      暇な人はあんまりネットってやっちゃいけないと思う。忙しい人ほどネットには向いてる。
-      ネットやってたって何も進まないからね。ただ情報は必要だからな………。</p>
+      <div class="post-meta"><span class="post-date">7月26日</span></div>
+      <p class="post-text">「デジタルデトックス」とか馬鹿にしてたのに、ネット観ないようにしたらメンタルの不調が戻ったんだよね。まじでネットはメンタル崩す。思い切ってSNSとYouTube辞めるのオススメする。しかも、感情のふり幅を大きくして購買意欲を高めるようにネットってできてるから、ネットにハマってるときってネガティブな情報をとことんネガティブに捉えてしまう。暇な人はあんまりネットってやっちゃいけないと思う。忙しい人ほどネットには向いてる。ネットやってたって何も進まないからね。ただ情報は必要だからな………。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月26日</span>
-      </div>
-      <p class="post-text">旦那が気を使って良かれと思ってやったことが裏目に出て落ち込んでるんだけど、
-        どうやって励ますか考えてる。あんまり気に病まなければいいけど。</p>
+      <div class="post-meta"><span class="post-date">7月26日</span></div>
+      <p class="post-text">旦那が気を使って良かれと思ってやったことが裏目に出て落ち込んでるんだけど、どうやって励ますか考えてる。あんまり気に病まなければいいけど。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月25日</span>
-      </div>
-      <p class="post-text">最近気が付いてるんだけど、興味のないものに集中するのが難しくてアニメとかも興味ないものはながら見しちゃうんだよね。
-      それを辞めたい。もうちょっと丁寧にアニメ観たいな。自分が興味ないものでも最低限、集中はしたい。
-      興味ない話を適当に聞いてしまうのって意外と問題なんじゃないかと思う。</p>
+      <div class="post-meta"><span class="post-date">7月25日</span></div>
+      <p class="post-text">最近気が付いてるんだけど、興味のないものに集中するのが難しくてアニメとかも興味ないものはながら見しちゃうんだよね。それを辞めたい。もうちょっと丁寧にアニメ観たいな。自分が興味ないものでも最低限、集中はしたい。興味ない話を適当に聞いてしまうのって意外と問題なんじゃないかと思う。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月25日</span>
-      </div>
-      <p class="post-text">足がびきーんってなって、調べたら水分が足りてないらしい。
-      結構水飲んでるけど寝汗めっちゃかいてるから………。
-      血液検査を半年に一回してるから病気ではないと思う。
-      液タブ壊れたストレスもあるし、はー、まじでちゃんと運動しないとな。<br>
-      こういうときに甘い物食べたくなる……。本当にどーーーしても甘い物食べくなったら豆乳飲んでる。
-      気休めでしかないけど。</p>
+      <div class="post-meta"><span class="post-date">7月25日</span></div>
+      <p class="post-text">足がびきーんってなって、調べたら水分が足りてないらしい。結構水飲んでるけど寝汗めっちゃかいてるから………。血液検査を半年に一回してるから病気ではないと思う。液タブ壊れたストレスもあるし、はー、まじでちゃんと運動しないとな。<br>こういうときに甘い物食べたくなる……。本当にどーーーしても甘い物食べくなったら豆乳飲んでる。気休めでしかないけど。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月24日</span>
-      </div>
-      <p class="post-text">でも暑くて外にでなくなってから右足の付け根が痛い。
-      ずっと座ってたからだと思う。エアロビしなきゃな。
-      汗かきたくなくて運動するの億劫になってしまう。（付け根が痛いときは大人しくしてるけど）
-      椅子をバランスボールにしてから腰とか痛くなくなったんだけど、
-      やっぱり座りすぎは良くないね。<br>
-      今日は金曜チートデェェェェェェエ。フォーーーーーーーー。
-      良いのか悪いのかチートデーを作った方が甘い物への喜びが一層増す。
-      「金曜以外に甘い物を我慢してるのはチートデーのためなんだ」と自分に言い聞かせる。</p>
+      <div class="post-meta"><span class="post-date">7月24日</span></div>
+      <p class="post-text">でも暑くて外にでなくなってから右足の付け根が痛い。ずっと座ってたからだと思う。エアロビしなきゃな。汗かきたくなくて運動するの億劫になってしまう。（付け根が痛いときは大人しくしてるけど）椅子をバランスボールにしてから腰とか痛くなくなったんだけど、やっぱり座りすぎは良くないね。<br>今日は金曜チートデェェェェェェエ。フォーーーーーーーー。良いのか悪いのかチートデーを作った方が甘い物への喜びが一層増す。「金曜以外に甘い物を我慢してるのはチートデーのためなんだ」と自分に言い聞かせる。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月24日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">7月24日</span></div>
       <p class="post-text">エアコンの風を当てないようにしたら頭痛がなくなった。解決！</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月23日</span>
-      </div>
-      <p class="post-text">夏に寝不足になることが多いから夜はクーラーを寒めに付けるようにしたんだけど、
-      よく寝られるようになった代わりに喉が痛くなって頭も痛い。
-      何が最適解なのか分からん………。加湿器買った方がいいかな？冷房の風があたってる気がする。<br>
-      追記：塩分取ったらちょっと頭痛いのよくなったから塩分不足な可能性がある。
-      とりあえず朝は味噌汁かナッツかジャガイモ（チアミンも）を食べてみようと思う。
-      明日はカロリーが高くて塩分が取れるナッツから始める。</p>
+      <div class="post-meta"><span class="post-date">7月23日</span></div>
+      <p class="post-text">夏に寝不足になることが多いから夜はクーラーを寒めに付けるようにしたんだけど、よく寝られるようになった代わりに喉が痛くなって頭も痛い。何が最適解なのか分からん………。加湿器買った方がいいかな？冷房の風があたってる気がする。<br>追記：塩分取ったらちょっと頭痛いのよくなったから塩分不足な可能性がある。とりあえず朝は味噌汁かナッツかジャガイモ（チアミンも）を食べてみようと思う。明日はカロリーが高くて塩分が取れるナッツから始める。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月22日</span>
-      </div>
-      <p class="post-text">暑さなのか片頭痛がヤバい。暑さでより痛みがより増すのなんでだろう。</p>
+      <div class="post-meta"><span class="post-date">7月22日</span></div>
+      <p class="post-text">暑さなのか片頭痛がヤバい。暑さで痛みがより増すのなんでだろう。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月21日</span>
-      </div>
-      <p class="post-text">夏は、肉とか芋類が食べたくなるのと同時にサラダも食べたくなる。
-      疲れてカロリー摂取するけど、汗をさっぱりさせたくてサラダ食べる。
-      そのせいか穀類を食べなくなる。</p>
+      <div class="post-meta"><span class="post-date">7月21日</span></div>
+      <p class="post-text">夏は、肉とか芋類が食べたくなるのと同時にサラダも食べたくなる。疲れてカロリー摂取するけど、汗をさっぱりさせたくてサラダ食べる。そのせいか穀類を食べなくなる。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月19日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">7月19日</span></div>
       <p class="post-text">翻訳のために医療辞書作りたいな。でも、私が勝手に調べたやつだからあんまり実用性はないけど。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月17日</span>
-      </div>
-      <p class="post-text">金曜のチートデーで甘い物飲みたすぎてリプトンのキウイティーを手に取ったと思ったら
-        会計で見たらミルクティーだった……うわぁぁ………。
-        脳内メーカーで「甘甘甘甘」の文字がひたすらあるみたいな状態。
-      甘い物を欲しすぎて正常に考えられなくなってる………。しかもメッセージとメールみたら誤字脱字だらけだった………。
-        まじでタバコも酒も甘味料も一緒だよ。甘い物も体に悪いしね。
-      （家族とか見てるとタバコを辞めるのも大変だなって思う。）
-      甘い物辞められるのかな………いや、絶対に辞めたい！</p>
+      <div class="post-meta"><span class="post-date">7月17日</span></div>
+      <p class="post-text">金曜のチートデーで甘い物飲みたすぎてリプトンのキウイティーを手に取ったと思ったら会計で見たらミルクティーだった……うわぁぁ………。脳内メーカーで「甘甘甘甘」の文字がひたすらあるみたいな状態。甘い物を欲しすぎて正常に考えられなくなってる………。しかもメッセージとメールみたら誤字脱字だらけだった………。まじでタバコも酒も甘味料も一緒だよ。甘い物も体に悪いしね。（家族とか見てるとタバコを辞めるのも大変だなって思う。）甘い物辞められるのかな………いや、絶対に辞めたい！</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月16日</span>
-      </div>
-      <p class="post-text">在宅で仕事してるからか、外の社会の雰囲気を味わいたくてコンビニに行っちゃうんだよね。
-      それを辞めたい。なにかちゃんと社会の雰囲気を味わる方法で、更にコンビニ行く以外でなにか良い方法ないかな……。
-      友達と遊ぶっていうのはちょっと違うんだよね。
-      もっと……こう、外の人間関係に軽く触れるみたいな。
-      図書館に資料探しに行くとか良いかもな。</p>
+      <div class="post-meta"><span class="post-date">7月16日</span></div>
+      <p class="post-text">在宅で仕事してるからか、外の社会の雰囲気を味わいたくてコンビニに行っちゃうんだよね。それを辞めたい。なにかちゃんと社会の雰囲気を味わる方法で、更にコンビニ行く以外でなにか良い方法ないかな……。友達と遊ぶっていうのはちょっと違うんだよね。もっと……こう、外の人間関係に軽く触れるみたいな。図書館に資料探しに行くとか良いかもな。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月15日</span>
-      </div>
-      <p class="post-text">あ、甘い物が食べたい………！！！
-      く、苦しい！！！！フルーツフレーバーティーで誤魔化す。
-        フルーツフレーバーティーで誤魔化せるレベルにまでやっと来た。
-      甘い物依存症には気をつけてね。性質はタバコと変わらん。<br>
-      そしてその刺激不足をYouTubeで埋めるという悪循環。
-      なぜその刺激の空白を勉強とか創作とかで埋められないのか………。</p>
+      <div class="post-meta"><span class="post-date">7月15日</span></div>
+      <p class="post-text">あ、甘い物が食べたい………！！！く、苦しい！！！！フルーツフレーバーティーで誤魔化す。フルーツフレーバーティーで誤魔化せるレベルにまでやっと来た。甘い物依存症には気をつけてね。性質はタバコと変わらん。<br>そしてその刺激不足をYouTubeで埋めるという悪循環。なぜその刺激の空白を勉強とか創作とかで埋められないのか………。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月15日</span>
-      </div>
-      <p class="post-text">目に歪んでるところがあったから、眼科行って診てもらったんだけど異常なくて、
-        大学病院行っても異常なくて……しまいには脳スキャン取ってもらおうかと思ったんだけど、
-        「たぶん何もないと思いますよ」って言われてしまった。
-        それで思ったのは眼の盲点がやけに気になる人がいるんじゃないかって……。
-        それしか考えられないんだよね。
-        眼を片目だけ開けて左右にズラすとその歪んでた部分が消えるからそうなのかなって。
-      眼精疲労で視覚過敏になってるのかなって予想してるから、なるべく散歩して遠くを見るようにしてる。
-      でも、散歩行かなきゃって思うのに「散歩めんどーい」ってなっちゃう。
-      眼を休めるために行かねば。</p>
+      <div class="post-meta"><span class="post-date">7月15日</span></div>
+      <p class="post-text">目に歪んでるところがあったから、眼科行って診てもらったんだけど異常なくて、大学病院行っても異常なくて……しまいには脳スキャン取ってもらおうかと思ったんだけど、「たぶん何もないと思いますよ」って言われてしまった。それで思ったのは眼の盲点がやけに気になる人がいるんじゃないかって……。それしか考えられないんだよね。眼を片目だけ開けて左右にズラすとその歪んでた部分が消えるからそうなのかなって。眼精疲労で視覚過敏になってるのかなって予想してるから、なるべく散歩して遠くを見るようにしてる。でも、散歩行かなきゃって思うのに「散歩めんどーい」ってなっちゃう。眼を休めるために行かねば。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月14日</span>
-      </div>
-      <p class="post-text">ずっと座って作業してて、立ちたくなってくるから
-        こういうときにYouTube観てエアロビやればいいのに
-        やっぱ運動ってめんどくさい～ってなっちゃう。
-        "健康のために運動する"ってのがやる気を削いでる原因な気がする。</p>
+      <div class="post-meta"><span class="post-date">7月14日</span></div>
+      <p class="post-text">ずっと座って作業してて、立ちたくなってくるからこういうときにYouTube観てエアロビやればいいのにやっぱ運動ってめんどくさい～ってなっちゃう。"健康のために運動する"ってのがやる気を削いでる原因な気がする。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月13日</span>
-      </div>
-      <p class="post-text">運動を習慣化させないと！！
-      YouTubeで音楽に合わせてエアロビクスするやつが自分にあってるけど、
-      週に２回くらいしかできてない。
-      なんか、運動って学生時代の部活のトラウマあるとやりたくなくなるよね。
-      体育の授業はスポーツじゃなくてウェルビーイングみたいに、
-      筋力を保つための運動を教えてほしいよ。</p>
+      <div class="post-meta"><span class="post-date">7月13日</span></div>
+      <p class="post-text">運動を習慣化させないと！！YouTubeで音楽に合わせてエアロビクスするやつが自分にあってるけど、週に２回くらいしかできてない。なんか、運動って学生時代の部活のトラウマあるとやりたくなくなるよね。体育の授業はスポーツじゃなくてウェルビーイングみたいに、筋力を保つための運動を教えてほしいよ。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月12日</span>
-      </div>
-      <p class="post-text">今日も２時間以上YouTubeを観たときに、やけに不安になったりとか、
-        嫌な思い出のフラッシュバックとかし始めて。
-        能動的な活動ってすごく時間の流れがゆっくりに感じるのは良いんだけど、
-        その分考える余地があるのがフラッシュバックの原因になってる気がする。
-        視聴時間を「短い区切り」にするのが良い気がする。</p>
+      <div class="post-meta"><span class="post-date">7月12日</span></div>
+      <p class="post-text">今日も２時間以上YouTubeを観たときに、やけに不安になったりとか、嫌な思い出のフラッシュバックとかし始めて。能動的な活動ってすごく時間の流れがゆっくりに感じるのは良いんだけど、その分考える余地があるのがフラッシュバックの原因になってる気がする。視聴時間を「短い区切り」にするのが良い気がする。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月11日</span>
-      </div>
-      <p class="post-text">やっぱ映像を２時間以上観ると辛いって思ってしまう。
-      何も進んでない気がするのと、能動的な趣味のほうが楽しいフェーズに今はいる。
-      映像は考える余白があるのもいけない気がする。</p>
+      <div class="post-meta"><span class="post-date">7月11日</span></div>
+      <p class="post-text">やっぱ映像を２時間以上観ると辛いって思ってしまう。何も進んでない気がするのと、能動的な趣味のほうが楽しいフェーズに今はいる。映像は考える余白があるのもいけない気がする。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">7月7日</span>
-      </div>
-      <p class="post-text">甘い物のご褒美を辞めたいな。
-      甘い物って手っ取り早く欲求が満たされるから良いんだけど、
-      甘い物のご褒美って健康に悪い気がする。</p>
+      <div class="post-meta"><span class="post-date">7月7日</span></div>
+      <p class="post-text">甘い物のご褒美を辞めたいな。甘い物って手っ取り早く欲求が満たされるから良いんだけど、甘い物のご褒美って健康に悪い気がする。</p>
+    </div>
+  </div>
+
+  <div class="month-label">2026年6月</div>
+
+  <div class="post">
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+    <div class="post-body">
+      <div class="post-meta"><span class="post-date">6月28日</span></div>
+      <p class="post-text">もしかしたら、「努力をしすぎる」っていうのもある意味で自傷行為なのかもしれない。その努力は、達成のためか、それとも不安の回避か。それで違ってくる気がする。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">6月28日</span>
-      </div>
-      <p class="post-text">もしかしたら、「努力をしすぎる」っていうのも
-        ある意味で自傷行為なのかもしれない。
-        その努力は、達成のためか、それとも不安の回避か。
-        それで違ってくる気がする。</p>
+      <div class="post-meta"><span class="post-date">6月26日</span></div>
+      <p class="post-text">今日はぜんぜん痛くない。頭痛ーる見たらただの「注意」マークだった。やっぱり低気圧かもしれないな。頭痛ーるを見て、どういった状況で頭痛がするのかしばらく観察しようかな。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">6月26日</span>
-      </div>
-      <p class="post-text">今日はぜんぜん痛くない。頭痛ーる見たらただの「注意」マークだった。
-      やっぱり低気圧かもしれないな。頭痛ーるを見て、どういった状況で頭痛がするのかしばらく観察しようかな。
-      </p>
+      <div class="post-meta"><span class="post-date">6月25日</span></div>
+      <p class="post-text">気圧は1010hPa。頭痛ーるによると1011から1008までいきなり下がるから警戒したほうがいいらしい。頭痛いけど、好きなこと考えると忘れられる。そっか。高いところから低くなるところを見なきゃいけないのか。</p>
+      <p class="post-text">でもとんでもないことを発見してしまったかもしれない。昔のファミコンとかゲームボーイの8bitの曲聴くと頭痛が楽になる。まあ、実際に効果があるのか試していきたい。</p>
+      <p class="post-text">今日は甘い物食べなかった。よし！</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">6月25日</span>
-      </div>
-      <p class="post-text">気圧は1010hPa。
-      頭痛ーるによると1011から1008までいきなり下がるから警戒したほうがいいらしい。
-      頭痛いけど、好きなこと考えると忘れられる。
-      そっか。高いところから低くなるところを見なきゃいけないのか。</p>
-      <p>でもとんでもないことを発見してしまったかもしれない。
-      昔のファミコンとかゲームボーイの8bitの曲聴くと頭痛が楽になる。
-      まあ、実際に効果があるのか試していきたい。</p>
-      <p>今日は甘い物食べなかった。よし！</p>
+      <div class="post-meta"><span class="post-date">6月23日</span></div>
+      <p class="post-text">鬱が治ってからでもうつ発作が起こることがあるんだけど、もしかしたら低気圧からくる片頭痛か過敏性腸症候群が関連してるかもしれない。自分の体調を丁寧に観察していく。</p>
+      <p class="post-text">今日の試す方法は「音楽を聴いて、ちょっと歌を口ずさんで、軽く踊る」。</p>
+      <p class="post-text">耳の下の首あたりから喉仏の下あたりまで違和感。肩凝りか甲状腺？歌を聞いたことよりも歌って口を動かしたことのほうが効果がある気がする。血流の問題？</p>
+      <p class="post-text">ちなみにずっと音楽聴き続けて一時間後くらいにじわーっと治った感じして、そのあと晴れた。やっぱり低気圧かな。太陽の光とか？</p>
+      <p class="post-text">気圧は1009hPa。風向きは北東。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">6月23日</span>
-      </div>
-      <p class="post-text">鬱が治ってからでもうつ発作が起こることがあるんだけど、
-        もしかしたら低気圧からくる片頭痛か過敏性腸症候群が関連してるかもしれない。
-        自分の体調を丁寧に観察していく。</p>
-      <p>今日の試す方法は「音楽を聴いて、ちょっと歌を口ずさんで、軽く踊る」。</p>
-      <p>耳の下の首あたりから喉仏の下あたりまで違和感。肩凝りか甲状腺？
-      歌を聞いたことよりも歌って口を動かしたことのほうが効果がある気がする。
-      血流の問題？</p>
-      <p>ちなみにずっと音楽聴き続けて一時間後くらいにじわーっと治った感じして、そのあと晴れた。
-        やっぱり低気圧かな。太陽の光とか？</p>
-      <p>気圧は1009hPa。風向きは北東。</p>
-    </div>
-  </div>
-
-  <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
-    <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">6月16日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">6月16日</span></div>
       <p class="post-text">蟯虫って症状ないのか。「夜にお尻（肛門）の周りがかゆくなる」しか症状がないらしい。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">6月15日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">6月15日</span></div>
       <p class="post-text">甘い物はほぼ辞めて代わりに豆乳とかナッツ類食べるようにしてるけど、やっぱりたまにコーラ飲みたくなっちゃう。ストレスとかあると飲みたくなっちゃうんだよね。よくないな。ちゃんと甘い物辞めたい。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">6月15日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">6月15日</span></div>
       <p class="post-text">片頭痛（へんずつう）なのか偏頭痛（へんとうつう）なのか調べたんだけど、医学的には片頭痛が正しいらしい。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">6月12日</span>
-      </div>
-      <p class="post-text">テレビとYouTube辞めてから偏頭痛がなくなったんだよね。
-        動画視聴が意外と健康に悪いんじゃないかと思う最近。
-        でも動画視聴ってすごく手軽だけどね。</p>
+      <div class="post-meta"><span class="post-date">6月12日</span></div>
+      <p class="post-text">テレビとYouTube辞めてから偏頭痛がなくなったんだよね。動画視聴が意外と健康に悪いんじゃないかと思う最近。でも動画視聴ってすごく手軽だけどね。</p>
     </div>
   </div>
 
   <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
+    <div class="avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
     <div class="post-body">
-      <div class="post-meta">
-        <span class="post-date">6月12日</span>
-      </div>
+      <div class="post-meta"><span class="post-date">6月12日</span></div>
       <p class="post-text">今日はパソコンをやり過ぎてしまったため、夜はお休み。YouTubeは動画２時間だけで抑えられてる。できるなら１時間が良いんだよな。その分、映画観たい。ちょっと運動したいなと思ったらストレッチかラジオ体操をしようと思う。ぺこまり体操とか良いかもしれない。もっとネット辞めたい。能動的なことしたい。</p>
-    </div>
-  </div>
-
-  <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
-    <div class="post-body">
-      <div class="post-meta">
-        <span class="post-name">Azalea72</span>
-        <span class="post-date">6月12日</span>
-      </div>
-      <p class="post-text">今週は野菜多めを意識してみた。サラダを先に食べる「ベジファースト」を3日続けたら、食後の眠気が少し減った気がする。続けてみよう。</p>
-      <div class="post-tags"><span class="tag">#食事</span><span class="tag">#野菜</span></div>
-    </div>
-  </div>
-
-  <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
-    <div class="post-body">
-      <div class="post-meta">
-        <span class="post-name">Azalea72</span>
-        <span class="post-date">6月10日</span>
-      </div>
-      <p class="post-text">朝の30分ウォーキングを3週間続けた。最初はしんどかったけど、最近は起きたら自然と靴を履いている。習慣化ってこういうことか、と実感。</p>
-      <div class="post-tags"><span class="tag">#運動</span><span class="tag">#ウォーキング</span><span class="tag">#習慣化</span></div>
-    </div>
-  </div>
-
-  <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
-    <div class="post-body">
-      <div class="post-meta">
-        <span class="post-name">Azalea72</span>
-        <span class="post-date">6月7日</span>
-      </div>
-      <p class="post-text">睡眠の質が上がったかも？ここ1週間、22時以降のスマホをやめたら寝つきが明らかによくなった。朝もわりとすっきり起きられる。</p>
-      <div class="post-tags"><span class="tag">#睡眠</span><span class="tag">#スマホ断ち</span></div>
-    </div>
-  </div>
-
-  <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
-    <div class="post-body">
-      <div class="post-meta">
-        <span class="post-name">Azalea72</span>
-        <span class="post-date">6月3日</span>
-      </div>
-      <p class="post-text">間食を減らすためにやった3つのこと：①お菓子を見えないところにしまう ②空腹を感じたらまず水を飲む ③手を動かす作業（お絵かき）で気をそらす。意外と③が効いてる。</p>
-      <div class="post-tags"><span class="tag">#食事</span><span class="tag">#間食</span></div>
-    </div>
-  </div>
-
-  <div class="month-label">2025年5月</div>
-
-  <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
-    <div class="post-body">
-      <div class="post-meta">
-        <span class="post-name">Azalea72</span>
-        <span class="post-date">5月28日</span>
-      </div>
-      <p class="post-text">体重が先月比で−1.2kg。急に減らすつもりはなかったけど、記録を続けていたら自然と食べすぎに気づけるようになった。あすけんのAI栄養士、地味に的確で好き。</p>
-      <div class="post-tags"><span class="tag">#体重</span><span class="tag">#あすけん</span></div>
-    </div>
-  </div>
-
-  <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
-    <div class="post-body">
-      <div class="post-meta">
-        <span class="post-name">Azalea72</span>
-        <span class="post-date">5月20日</span>
-      </div>
-      <p class="post-text">雨続きで全然歩けなかった週。こういうときは無理しない、が自分ルール。代わりに室内でストレッチを20分。完璧じゃなくていいと思うとずっと楽。</p>
-      <div class="post-tags"><span class="tag">#運動</span><span class="tag">#ストレッチ</span><span class="tag">#雨の日</span></div>
-    </div>
-  </div>
-
-  <div class="post">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </div>
-    <div class="post-body">
-      <div class="post-meta">
-        <span class="post-name">Azalea72</span>
-        <span class="post-date">5月10日</span>
-      </div>
-      <p class="post-text">このサイトを作り始めた。記録をつけること自体はずっとしていたけど、どこかに書いておくと振り返りやすいかなと思って。ゆっくり育てていきたい。</p>
-      <div class="post-tags"><span class="tag">#はじめました</span></div>
     </div>
   </div>
 
@@ -1137,7 +585,7 @@
     <li><a href="column.html">コラム</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <p>&copy; 2025 HealthLog</p>
+  <p>&copy; 2026 HealthLog</p>
 </footer>
 
 </body>
